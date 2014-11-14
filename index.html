@@ -1,0 +1,46 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  <script src="script.js"></script>
+  <link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+  <style>
+    body {
+      margin: 10px;
+      padding: 10px;
+    }
+
+    canvas {
+      border: 1px solid red;
+    }
+
+    svg {
+      border: 1px solid blue;
+    }
+
+    pre {
+      border: 1px solid green;
+    }
+  </style>
+</head>
+<body>
+<form class="well span12">
+<h2>None of this form crap works yet...</h2>
+  <label>Image:<input id="image" type="text"/>
+    <button id="process">Load</button>
+  </label>
+  <label>Row Frequency:<input id="row-freq" type="text"/></label>
+  <label>Column Frequency:<input id="col-freq" type="text"/></label>
+  <label>Wiggle:<input id="wiggle" type="text"/></label>
+</form>
+<canvas id="my-canvas" width="300" height="200"></canvas>
+
+<svg id="my-svg" width="500" height="400" viewBox="0 0 150 275"
+     preserveAspectRatio="xMinYMin slice">
+  <polyline fill="none" stroke="gray" stroke-width="0.1"
+            points="0,0 10,0"></polyline>
+</svg>
+<pre id="my-gcode">Gcode here</pre>
+
+</body>
+</html>  
