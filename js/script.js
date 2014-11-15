@@ -12,10 +12,27 @@ $( document ).ready(function() {
   var imgHeight = 104;
   var imageOffsetX = 10;
   var imageOffsetY = 10;
-  var imgSrc = 'images/img2.png';
+  //var imgSrc = 'images/img2.png';
 
+  $('#image-name').val("images/img2.png");
+  $('#row-freq').val(rowSampleFrequency);
+  $('#col-freq').val(colSampleFrequency);
+  $('#wiggle').val(wiggleHeight);
 
+  $('#process').on('click',function(){
+    rowSampleFrequency = $('#row-freq').val();
+    colSampleFrequency = $('#col-freq').val();
+    wiggleHeight = +$('#wiggle').val();
+    imageObj.src = $('#image-name').val();
+    return false;
+
+  });
   imageObj.onload = function() {
+
+    //TODO: create second canvas and flip (they are cheap)
+    //the image...
+
+   // context.scale(-1, 1);
     context.drawImage(imageObj, imageOffsetX, imageOffsetY);
     // now iterate through pixels
 
@@ -25,7 +42,7 @@ $( document ).ready(function() {
     var farsideOffset = (imageOffsetX + imgWidth) % rowSampleFrequency;
     
     //iterate through the image back and forth for each line
-    for (var posY = imageOffsetY; posY < imgHeight; posY += colSampleFrequency) {
+    for (posY = imageOffsetY; posY < imgHeight; posY += colSampleFrequency) {
       
       //colCount tracks iterations for modulus switching
       colCount++;
@@ -49,9 +66,10 @@ $( document ).ready(function() {
 
     //make that gcode
     generateGcode(xyArray);
+    //context.scale(1, 1);
 
   };
-  imageObj.src = imgSrc;
+
 
   //===== function definitions ======
   function generateBump(x, y, pixel) {
@@ -89,10 +107,8 @@ $( document ).ready(function() {
     while (array.length) {
       gcode.push("G1 X" + array.shift() + " Y" + array.shift() + " E" + truncateToNdecimals(ecount += iterator, 6));
     }
-    ;
     $("#my-gcode").text(gcode.join("\n"));
   }
-  ;
   function truncateToNdecimals(num, decimals) {
     var mult = Math.pow(10, decimals);
     return Math.round(num * mult) / mult;

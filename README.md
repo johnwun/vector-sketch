@@ -18,6 +18,3 @@ NOTES:
 - Gcode currently rendering backwards and upside down. Probably because gcode origin Y axis is reverse that of canvas.
 
 - FarsideOffset is calculating wrong, should not be using modulus.
-
-
-

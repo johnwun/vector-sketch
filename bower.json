@@ -1,0 +1,34 @@
+{
+  "name": "vector-sketch",
+  "version": "0.0.0",
+  "homepage": "https://github.com/johnwun/vector-sketch",
+  "authors": [
+    "Wundes",
+    "John <johnwun@gmail.com>"
+  ],
+  "description": "gcode from images",
+  "main": "index.html",
+  "keywords": [
+    "images",
+    "gcode",
+    "vector",
+    "raster",
+    "translate",
+    "conversion",
+    "etch-a-sketch"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "1.2.0-rc.1",
+    "bootstrap": "~3.0.0",
+    "jquery": "~2.0.3",
+    "underscore": "~1.5.2"
+  }
+}
